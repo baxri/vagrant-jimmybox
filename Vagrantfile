@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     # NETWORKING
     ############################################################################
 
-    config.vm.hostname = "jimmy"
+    config.vm.hostname = "web"
 
     # Private Network
     config.vm.network "private_network", ip: "192.168.10.10"
@@ -50,6 +50,15 @@ Vagrant.configure("2") do |config|
     # You can use vagrant rsync-auto to sync changes automatically to your vagrant box.
     # config.vm.synced_folder "./", "/var/www", type: "rsync", rsync__auto: true
 	
+	
+	config.vm.provision "shell", inline: <<-SHELL
+   
+		sudo cp /var/www/sites/vhosts /etc/apache2/sites-available/vhosts.conf		
+		sudo a2ensite vhosts		
+		
+		sudo service apache2 restart		
+	
+    SHELL
 	
 	config.vm.box_download_insecure = true
 end

@@ -1,0 +1,33 @@
+
+<VirtualHost *:80 *:8080>
+        ServerName web1.dev
+        ServerAlias www.web1.dev
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/public/web1/
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80 *:8080>
+        ServerName web2.dev
+        ServerAlias www.web2.dev
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/public/web2/
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80 *:8080>
+        ServerName web3.dev
+        ServerAlias www.web3.dev
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/public/web3/
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
